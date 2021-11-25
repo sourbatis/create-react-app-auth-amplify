@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
         <AmplifySignOut />
         <header className="App-header">
-          <p>Welcome {this.state.attributes.email}</p>
+          <p>Welcome {this.state.attributes.username}</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

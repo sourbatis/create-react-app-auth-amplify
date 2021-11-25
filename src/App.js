@@ -9,22 +9,26 @@ Amplify.configure(aws_exports);
 class App extends Component {
   constructor() {
     super();
-    this.state = { data: [] };
+    this.state = { username: '', };
+    console.log('In constructor');
+    console.log(this.state.username);
   }
   
-  async componentDidUpdate() {
+  async componentDidMount() {
     const { attributes } = await Auth.currentAuthenticatedUser({bypassCache : false});
-    this.setState({ data: attributes });
+    this.setState({ username: attributes.username });
+    console.log('in componentDidMount()');
+    console.log(this.state.username);
   }
   
   render() {
+    console.log('in render');
+    console.log(this.state.username);
     return (
       <div className="App">
         <AmplifySignOut />
         <header className="App-header">
-          <p>{this.state}</p>
-          <p>{this.state.data}</p>
-          <p>Welcome {this.state.data.username}</p>
+          <p>Welcome</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

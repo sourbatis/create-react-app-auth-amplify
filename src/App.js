@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <AmplifySignOut />
         <header className="App-header">
-          <p>Welcome Auth.currentAuthenticatedUser({bypassCache: false}).attributes.email</p>
+          <p>Welcome Auth.currentAuthenticatedUser({ bypassCache: false })</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

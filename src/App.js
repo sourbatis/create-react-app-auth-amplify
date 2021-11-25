@@ -13,7 +13,7 @@ class App extends Component {
   }
   
   async componentDidMount() {
-    const attributes = await Auth.currentAuthenticatedUser({bypassCache : false}).attributes;
+    const { attributes } = await Auth.currentAuthenticatedUser({bypassCache : false});
     this.setState({ data: attributes });
   }
   
@@ -22,6 +22,8 @@ class App extends Component {
       <div className="App">
         <AmplifySignOut />
         <header className="App-header">
+          <p>{this.state}</p>
+          <p>{this.state.data}</p>
           <p>Welcome {this.state.data.username}</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>

@@ -7,12 +7,22 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { data: [] };
+  }
+  
+  async componentDidMount() {
+    const attributes = await Auth.currentAuthenticatedUser({bypassCache : false}).attributes;
+    this.setState({ data: attributes });
+  }
+  
   render() {
     return (
       <div className="App">
         <AmplifySignOut />
         <header className="App-header">
-          <p>Welcome {Auth.currentAuthenticatedUser()}</p>
+          <p>Welcome {this.state.attributes.email}</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

@@ -15,8 +15,8 @@ class App extends Component {
   }
   
   async componentDidMount() {
-    const { attributes } = await Auth.currentAuthenticatedUser({bypassCache : false});
-    this.setState({ username: attributes.username });
+    const user = await Auth.currentAuthenticatedUser({bypassCache : false});
+    this.setState({ username: user.username });
     console.log('in componentDidMount()');
     console.log(this.state.username);
   }

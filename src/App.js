@@ -12,7 +12,7 @@ class App extends Component {
     this.state = { data: [] };
   }
   
-  async componentDidMount() {
+  async componentDidUpdate() {
     const { attributes } = await Auth.currentAuthenticatedUser({bypassCache : false});
     this.setState({ data: attributes });
   }

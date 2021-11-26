@@ -29,6 +29,9 @@ class App extends Component {
         <AmplifySignOut />
         <header className="App-header">
           <p>Welcome {this.state.username}</p>
+          <p>Your current balance is 0Kilo</>
+          <p>You have no blockchain account associated with your profile</p>
+          <p>Please upload your activity files</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
